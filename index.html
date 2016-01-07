@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
-    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
     <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
 
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
@@ -20,38 +20,128 @@
     <script src="js/metro.js"></script>
  
     <style>
-        .login-form {
-            width: 1300px;
-            height: 800px;
-            position: fixed;
-            top: 50%;
-            margin-top: -400px;
-            left: 50%;
-            margin-left: -650px;
-	    background-image: url('images/bg_desktop.jpg');
-            opacity: 1;
-        }
-    </style>
+.wallpaper {
+  width: 1200px;
+  height: 800px;
+  background-image: url('http://bing.frl/images/bg_desktop.jpg');
+  position: absolute;
+  top: 50%;
+  margin-top: -400px;
+  left: 50%;
+  margin-left: -600px;
+  border: 1px Grey solid;
+}
 
-    <script>
-          $(function() {
-	    $('form').submit(function() {
-	      var $m = $(this).find('[name=q]');
-	      $m.val('site:.frl ' + $m.val());
-	    });
-	  });
-    </script>
-</head>
-<body class="bg-darkTeal">
-    <div class="login-form padding20 block-shadow">
-    <form id=searchForm" action="http://www.bing.com">
-    <div class="input-control text big-input" style="width: 50%" data-role="input">
-	<input type="text" name="q">
-	<button class="button"><span class="mif-search"></span></button>
-    </div>
-    </form>
-    </div>
 
-</body>
-</html>
+.cf:before, .cf:after{
+    content:"";
+    display:table;
+}
 
+.cf:after{
+    clear:both;
+}
+
+.cf{
+    zoom:1;
+}   
+
+/* Form wrapper styling */
+.form-wrapper {
+    width: 450px;
+    padding: 15px;
+    margin: 150px auto 50px auto;
+    background: #444;
+    background: rgba(0,0,0,.1);
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.2) inset, 0 1px 0 rgba(255,255,255,.2);
+}
+
+/* Form text input */
+
+.form-wrapper input {
+    width: 330px;
+    height: 20px;
+    padding: 10px 5px;
+    float: left;    
+    font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    border: 0;
+    background: #eee;
+    border-radius: 3px 0 0 3px;      
+}
+
+.form-wrapper input:focus {
+    outline: 0;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+.form-wrapper input::-webkit-input-placeholder {
+   color: #999;
+   font-weight: normal;
+   font-style: italic;
+}
+
+.form-wrapper input:-moz-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.form-wrapper input:-ms-input-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}    
+
+/* Form submit button */
+.form-wrapper button {
+    overflow: visible;
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 110px;
+    font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    color: #fff;
+    text-transform: uppercase;
+    background: #d83c3c;
+    border-radius: 0 3px 3px 0;      
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+}   
+  
+.form-wrapper button:hover{		
+    background: #e54040;
+}	
+  
+.form-wrapper button:active,
+.form-wrapper button:focus{   
+    background: #c42f2f;
+	outline: 0;   
+}
+
+.form-wrapper button:before { /* left arrow */
+    content: '';
+    position: absolute;
+    border-width: 8px 8px 8px 0;
+    border-style: solid solid solid none;
+    border-color: transparent #d83c3c transparent;
+    top: 12px;
+    left: -6px;
+}
+
+.form-wrapper button:hover:before{
+    border-right-color: #e54040;
+}
+
+.form-wrapper button:focus:before,
+.form-wrapper button:active:before{
+        border-right-color: #c42f2f;
+}      
+
+.form-wrapper button::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
+    border: 0;
+    padding: 0;
+}    
